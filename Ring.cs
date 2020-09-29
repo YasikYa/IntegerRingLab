@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MarkLab1
 {
-    class Ring
+    public class Ring
     {
         
         private RingNode _current;
@@ -77,8 +77,8 @@ namespace MarkLab1
             if (Count != other.Count)
                 return false;
 
-            var firstItems = Read(Direction.Forward).Take(Count).ToList();
-            var secondItems = other.Read(Direction.Forward).Take(Count).ToList();
+            var firstItems = Read(Direction.Forward).Take(Count);
+            var secondItems = other.Read(Direction.Forward).Take(Count);
 
             return Enumerable.SequenceEqual(firstItems, secondItems);
         }
